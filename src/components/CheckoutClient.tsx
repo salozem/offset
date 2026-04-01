@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Suspense } from "react";
+import { addRSVP } from "@/lib/store";
 
 function CheckoutInner() {
   const params = useSearchParams();
@@ -14,10 +15,14 @@ function CheckoutInner() {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  const classId = params.get("classId") ?? "";
   const instructor = params.get("instructor") ?? "Instructor";
   const date = params.get("date") ?? "";
   const time = params.get("time") ?? "";
   const price = Number(params.get("price") ?? 15);
+  const attendeeName = params.get("name") ?? "";
+  const attendeeEmail = params.get("email") ?? "";
+  const attendeePhone = params.get("phone") ?? "";
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setCard((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -25,6 +30,14 @@ function CheckoutInner() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    addRSVP({
+      id: `${classId}-${Date.now()}`,
+      classId,
+      name: attendeeName,
+      email: attendeeEmail,
+      phone: attendeePhone,
+      createdAt: new Date().toISOString(),
+    });
     setSubmitted(true);
   }
 
